@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI Resume Analyzer</h1>
+            <p>Upload your resume and get instant AI-powered analysis and recommendations</p>
+        </header>
+
+        <div class="upload-section">
+            <form id="uploadForm" enctype="multipart/form-data">
+                <div class="file-upload">
+                    <input type="file" id="resume" name="resume" accept=".pdf,.docx,.doc,.txt" required>
+                    <label for="resume">
+                        <span class="upload-icon">📄</span>
+                        <span class="upload-text">Choose your resume (PDF, DOCX, DOC, TXT)</span>
+                    </label>
+                </div>
+
+                <div class="job-description">
+                    <label for="job_description">Job Description (Optional):</label>
+                    <textarea id="job_description" name="job_description" 
+                              placeholder="Paste the job description here for personalized analysis..."></textarea>
+                </div>
+
+                <button type="submit" class="analyze-btn">
+                    <span class="btn-text">Analyze Resume</span>
+                    <span class="btn-loading" style="display: none;">Analyzing...</span>
+                </button>
+            </form>
+        </div>
+
+        <div id="results" class="results-section" style="display: none;">
+            <!-- Results will be displayed here -->
+        </div>
+
+        <footer>
+            <p>Built with ❤️ for your career success</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
